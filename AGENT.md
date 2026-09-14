@@ -1009,4 +1009,3 @@ $$a = \frac{\omega^2}{r}$$
 
 ```math
 F \(= \frac{m \omega^2}{r} \%\%\)MAGIT_PARSER_PROTECT%%```
-
