@@ -635,39 +635,39 @@ $$\cos(r,\alpha \pm \beta) = \frac{\cos(r,\alpha) \cos(r,\beta) \mp \sin(r,\alph
 
 ### Corollary 2.3: The derivative of the cosine function with respect to the arc length
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}{\partial s}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(r \sum_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}{\partial s}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \frac{s^{2k}}{r^{2k}}}{(2k)!}\right)}{\partial s}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(r \sum_{k=0}^{\infty} \frac{(-1)^k \frac{s^{2k}}{r^{2k}}}{(2k)!}\right)}{\partial s}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k s^{2k}}{r^{2k} (2k)!}\right)}{\partial s}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(r \sum_{k=0}^{\infty} \frac{(-1)^k s^{2k}}{r^{2k} (2k)!}\right)}{\partial s}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(\sum \limits_{k=0}^{\infty} \frac{(-1)^k rs^{2k}}{r^{2k} (2k)!}\right)}{\partial s}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(\sum_{k=0}^{\infty} \frac{(-1)^k rs^{2k}}{r^{2k} (2k)!}\right)}{\partial s}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(\sum \limits_{k=0}^{\infty} \frac{(-1)^k s^{2k}}{r^{2k-1} (2k)!}\right)}{\partial s}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(\sum_{k=0}^{\infty} \frac{(-1)^k s^{2k}}{r^{2k-1} (2k)!}\right)}{\partial s}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=0}^{\infty} \frac{(-1)^k \frac{\partial s^{2k}}{\partial s}}{r^{2k-1} (2k)!}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = \sum_{k=0}^{\infty} \frac{(-1)^k \frac{\partial s^{2k}}{\partial s}}{r^{2k-1} (2k)!}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=1}^{\infty} \frac{(-1)^k (2k) s^{2k-1}}{r^{2k-1} (2k)!}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = \sum_{k=1}^{\infty} \frac{(-1)^k (2k) s^{2k-1}}{r^{2k-1} (2k)!}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=1}^{\infty} \frac{(-1)^k (2k) \frac{s^{2k-1}}{r^{2k-1}}}{(2k)!}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = \sum_{k=1}^{\infty} \frac{(-1)^k (2k) \frac{s^{2k-1}}{r^{2k-1}}}{(2k)!}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=1}^{\infty} \frac{(-1)^k (2k) \left(\frac{s}{r}\right)^{2k-1}}{(2k)!}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = \sum_{k=1}^{\infty} \frac{(-1)^k (2k) \left(\frac{s}{r}\right)^{2k-1}}{(2k)!}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=1}^{\infty} \frac{(-1)^k (2k) \left(\frac{s}{r}\right)^{2k-1}}{(2k) (2k-1)!}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = \sum_{k=1}^{\infty} \frac{(-1)^k (2k) \left(\frac{s}{r}\right)^{2k-1}}{(2k) (2k-1)!}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=1}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k-1}}{(2k-1)!}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = \sum_{k=1}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k-1}}{(2k-1)!}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=1}^{\infty} \frac{-(-1)^{k-1} \left(\frac{s}{r}\right)^{2k-1}}{(2k-1)!}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = \sum_{k=1}^{\infty} \frac{-(-1)^{k-1} \left(\frac{s}{r}\right)^{2k-1}}{(2k-1)!}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = -\sum \limits_{k=1}^{\infty} \frac{(-1)^{k-1} \left(\frac{s}{r}\right)^{2k-1}}{(2k-1)!}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = -\sum_{k=1}^{\infty} \frac{(-1)^{k-1} \left(\frac{s}{r}\right)^{2k-1}}{(2k-1)!}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = -\sum \limits_{k=1}^{\infty} \frac{(-1)^{k-1} \left(\frac{s}{r}\right)^{2(k-1)+1}}{(2k-1)!}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = -\sum_{k=1}^{\infty} \frac{(-1)^{k-1} \left(\frac{s}{r}\right)^{2(k-1)+1}}{(2k-1)!}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = -\sum \limits_{k=1}^{\infty} \frac{(-1)^{k-1} \left(\frac{s}{r}\right)^{2(k-1)+1}}{(2(k-1)+1)!}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = -\sum_{k=1}^{\infty} \frac{(-1)^{k-1} \left(\frac{s}{r}\right)^{2(k-1)+1}}{(2(k-1)+1)!}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = -\sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k+1}}{(2k+1)!}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = -\sum_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k+1}}{(2k+1)!}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \frac{-r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k+1}}{(2k+1)!}}{r}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = \frac{-r \sum_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k+1}}{(2k+1)!}}{r}$$
 
 $$\frac{\partial \cos(r,s)}{\partial s} = \frac{-\sin(r,s)}{r}$$
 
