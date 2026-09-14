@@ -669,7 +669,7 @@ $$\frac{\partial \cos(r,s)}{\partial s} = -\sum_{k=0}^{\infty} \frac{(-1)^k \lef
 
 $$\frac{\partial \cos(r,s)}{\partial s} = \frac{-r \sum_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k+1}}{(2k+1)!}}{r}$$
 
-$$\frac{\partial \cos(r,s)}{\partial s} = \frac{-\sin(r,s)}{r}$$
+$$\frac{\partial \cos(r,s)}{\partial s} = -\frac{\sin(r,s)}{r}$$
 
 ### Definition 2.3: The arcsine function
 
