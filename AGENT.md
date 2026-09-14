@@ -1007,5 +1007,5 @@ $$a = \frac{\omega^2 r}{r^2}$$
 
 $$a = \frac{\omega^2}{r}$$
 
-```math
-F \(= \frac{m \omega^2}{r} \%\%\)MAGIT_PARSER_PROTECT%%```
+$$F = \frac{m \omega^2}{r}$$
+
