@@ -23,7 +23,7 @@ $$a_0 = x \quad \text{ for } -r \leq x \leq r$$
 
 #### Proof
 
-$$\operatorname{arc} RS_0 := \lim \limits_{n \to \infty} 2^n \overline{RS_n}$$
+$$\mathrm{arc} RS_0 := \lim \limits_{n \to \infty} 2^n \overline{RS_n}$$
 
 $$\overline{RS_n} = \sqrt{\overline{OR}^2 + \overline{OS_n}^2 - 2 \overline{OS_n} \overline{OX_n}}$$
 
@@ -175,21 +175,21 @@ $$A = \frac{rs}{2}$$
 
 ##### Lemma 1.4: The area of the circular sector sequence
 
-$$A = \lim \limits_{n \to \infty} 2^{n-1} A_{ORS_nS_{n-1}}$$
+$$A_0 = \lim \limits_{n \to \infty} 2^{n-1} A_{ORS_nS_{n-1}}$$
 
-$$A = \lim \limits_{n \to \infty} 2^{n-1} \frac{\overline{RS_{n-1}} \overline{OS_n}}{2}$$
+$$A_0 = \lim \limits_{n \to \infty} 2^{n-1} \frac{\overline{RS_{n-1}} \overline{OS_n}}{2}$$
 
-$$A = \frac{\lim \limits_{n \to \infty} 2^{n-1} \overline{RS_{n-1}} \overline{OS_n}}{2}$$
+$$A_0 = \frac{\lim \limits_{n \to \infty} 2^{n-1} \overline{RS_{n-1}} \overline{OS_n}}{2}$$
 
-$$A = \frac{\lim \limits_{n \to \infty} \left(2^{n-1} \overline{RS_{n-1}}\right) \overline{OS_n}}{2}$$
+$$A_0 = \frac{\lim \limits_{n \to \infty} \left(2^{n-1} \overline{RS_{n-1}}\right) \overline{OS_n}}{2}$$
 
-$$A = \frac{\lim \limits_{n \to \infty} \overline{OS_n} \left(2^{n-1} \overline{RS_{n-1}}\right)}{2}$$
+$$A_0 = \frac{\lim \limits_{n \to \infty} \overline{OS_n} \left(2^{n-1} \overline{RS_{n-1}}\right)}{2}$$
 
-$$A = \frac{\left(\lim \limits_{n \to \infty} \overline{OS_n}\right) \left(\lim \limits_{n \to \infty} 2^{n-1} \overline{RS_{n-1}}\right)}{2}$$
+$$A_0 = \frac{\left(\lim \limits_{n \to \infty} \overline{OS_n}\right) \left(\lim \limits_{n \to \infty} 2^{n-1} \overline{RS_{n-1}}\right)}{2}$$
 
-$$A = \frac{\overline{OR} \lim \limits_{n \to \infty} 2^{n-1} \overline{RS_{n-1}}}{2}$$
+$$A_0 = \frac{\overline{OR} \lim \limits_{n \to \infty} 2^{n-1} \overline{RS_{n-1}}}{2}$$
 
-$$A = \frac{\overline{OR} \operatorname{arc} RS_0}{2}$$
+$$A_0 = \frac{\overline{OR} \mathrm{arc} RS_0}{2}$$
 
 ## 2. The circular functions
 
