@@ -23,7 +23,7 @@ $$a_0 = x \quad \text{ for } -r \leq x \leq r$$
 
 #### Proof
 
-$$\operatorname{arc} RS_0 := \lim \limits_{n \to \infty} 2^n \overline{RS_n}$$
+$$\mathrm{arc} RS_0 := \lim \limits_{n \to \infty} 2^n \overline{RS_n}$$
 
 $$\overline{RS_n} = \sqrt{\overline{OR}^2 + \overline{OS_n}^2 - 2 \overline{OS_n} \overline{OX_n}}$$
 
@@ -189,7 +189,7 @@ $$A_0 = \frac{\left(\lim \limits_{n \to \infty} \overline{OS_n}\right) \left(\li
 
 $$A_0 = \frac{\overline{OR} \lim \limits_{n \to \infty} 2^{n-1} \overline{RS_{n-1}}}{2}$$
 
-$$A_0 = \frac{\overline{OR} \operatorname{arc} RS_0}{2}$$
+$$A_0 = \frac{\overline{OR} \mathrm{arc} RS_0}{2}$$
 
 ## 2. The circular functions
 
