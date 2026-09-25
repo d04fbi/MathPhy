@@ -1,0 +1,6 @@
+% Copyright © 2026 Fredrik Bierich
+% SPDX-License-Identifier: MIT
+set(groot, 'DefaultAxesColorOrder', [0, 0, 0]);
+set(groot, 'DefaultPatchEdgeColor', [0, 0, 0]);
+set(groot, 'DefaultPatchFaceColor', [0, 0, 0]);
+set(groot, 'DefaultTextFontSize', 16);
