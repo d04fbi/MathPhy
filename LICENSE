@@ -2,8 +2,8 @@
 
 This repository is multi-licensed. The applicable license depends on the file type:
 
-- All GNU Octave source code (.octaverc and .m files) is licensed under the MIT License.
-- All LaTeX source code and generated output (.tex and .pdf files) are licensed under the Creative Commons Attribution 4.0 International License.
+- All GNU Octave source code (`.octaverc` and `.m` files) is licensed under the MIT License.
+- All LaTeX source code and generated output (`.tex`, `.eps`, and `.pdf` files) are licensed under the Creative Commons Attribution 4.0 International License.
 
 ## 1. MIT License
 
