@@ -14,7 +14,7 @@ Copyright © 2026 Fredrik Bierich
 
 All content in this repository is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
 
-Commercial use, redistribution, or sale of any part of this work is strictly prohibited without explicit permission from the author.
+You are free to share and adapt this material for non-commercial purposes, provided you give appropriate credit and distribute your contributions under the same license. Commercial use and sale are strictly prohibited.
 
 For the full legal code, please see the [LICENSE](LICENSE) file.
 
