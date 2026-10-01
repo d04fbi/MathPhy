@@ -12,7 +12,7 @@ pdflatex report.tex
 # License
 Copyright © 2026 Fredrik Bierich
 
-All content in this repository – including but not limited to GNU Octave source code, LaTeX source code, and generated outputs (.pdf, .eps) – is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
+All content in this repository – including but not limited to GNU Octave source code (.octaverc, .m), LaTeX source code (.tex), and generated outputs (.pdf, .eps) – is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
 
 Commercial use, redistribution, or sale of any part of this work is strictly prohibited without explicit permission from the author.
 
