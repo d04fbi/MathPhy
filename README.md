@@ -10,8 +10,6 @@ MiKTeX
 octave main.m  
 pdflatex report.tex
 # License
-Copyright © 2026 Fredrik Bierich
-
 This repository is dual-licensed:
 
 *   GNU Octave source code (`.m` and `.octaverc` files): Licensed under [MIT License](LICENSE-MIT).
