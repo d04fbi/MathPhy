@@ -1,12 +1,11 @@
 % =============================================================================
 % Copyright © 2026 Fredrik Bierich
+% 
+% This file is licensed under the MIT License.
 %
-% This file is licensed under the Creative Commons Attribution-NonCommercial-
-% ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
-%
-% You are free to share and adapt this material for non-commercial purposes,
-% provided you give appropriate credit and distribute your contributions under
-% the same license. Commercial use and sale are strictly prohibited.
+% Permission is hereby granted to use, copy, modify, merge, and distribute 
+% this software for any purpose, provided that the above copyright notice 
+% and this permission notice are included in all copies.
 %
 % For commercial licensing inquiries, please contact: fredrik.bierich@gmail.com
 % =============================================================================
