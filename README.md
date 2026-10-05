@@ -12,7 +12,7 @@ pdflatex report.tex
 # License
 Copyright © 2026 Fredrik Bierich
 
-*   **GNU Octave Source Code (`.m` files and `.octaverc` files):** Licensed under the **MIT License**. See [LICENSE.MIT](LICENSE.MIT) for the full legal text.
-*   **LaTeX Documentation (`.tex` files and `.pdf` files):** Licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License**. See [LICENSE.CC](LICENSE.CC) for the full legal text.
+*   GNU Octave Source Code (`.m` files and `.octaverc` files): Licensed under the MIT License. See [LICENSE-MIT](LICENSE-MIT) for the full legal text.
+*   LaTeX Documentation (`.tex` files and `.pdf` files): Licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License. See [LICENSE-CC-BY-NC-SA](LICENSE-CC-BY-NC-SA) for the full legal text.
 
 For commercial licensing inquiries, please contact: fredrik.bierich@gmail.com
