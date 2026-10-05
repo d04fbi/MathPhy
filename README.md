@@ -12,10 +12,7 @@ pdflatex report.tex
 # License
 Copyright © 2026 Fredrik Bierich
 
-All content in this repository is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
-
-You are free to share and adapt this material for non-commercial purposes, provided you give appropriate credit and distribute your contributions under the same license. Commercial use and sale are strictly prohibited.
-
-For the full legal code, please see the [LICENSE](LICENSE) file.
+*   **GNU Octave Source Code (`.m` files and `.octaverc` files):** Licensed under the **MIT License**. See [LICENSE.MIT](LICENSE.MIT) for the full legal text.
+*   **LaTeX Documentation (`.tex` files and `.pdf` files):** Licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License**. See [LICENSE.CC](LICENSE.CC) for the full legal text.
 
 For commercial licensing inquiries, please contact: fredrik.bierich@gmail.com
