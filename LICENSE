@@ -1,4 +1,4 @@
-This repository contains content licensed under two different licenses depending on the file type:
+# License
 
 *   GNU Octave source code (`.m` and `.octaverc` files): Licensed under the MIT License.
 *   LaTeX source code and documentation (`.tex`, `.eps`, and `.pdf` files): Licensed under CC BY-NC-SA 4.0.
