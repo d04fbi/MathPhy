@@ -1,0 +1,1740 @@
+% =============================================================================
+% Copyright © 2026 Fredrik Bierich
+% 
+% This file is licensed under the Creative Commons Attribution-NonCommercial-
+% ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
+%
+% You are free to share and adapt this material for non-commercial purposes,
+% provided you give appropriate credit and distribute your contributions under 
+% the same license. Commercial use and sale are strictly prohibited.
+%
+% For commercial licensing inquiries, please contact: fredrik.bierich@gmail.com
+% =============================================================================
+\documentclass[a4paper,12pt]{report}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{pdflscape}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage[hidelinks, implicit=false]{hyperref}
+\usepackage{hyperxmp}
+\usepackage{orcidlink}
+\hypersetup{
+	pdfauthor={Fredrik Bierich},
+	pdftitle={The Abstraction Gap Between Mathematics and Physics: The Hidden Compromise in Dimensional Analysis Resolved},
+	pdfsubject={Mathematics, Mathematical Physics, Machine Learning},
+	pdfkeywords={Dimensional Analysis, Circular Sector, Circular Functions, Chebyshev Polynomials, Simple Harmonic Motion, Uniform Circular Motion, AI for Mathematics, Automated Reasoning, Symbolic AI},
+	pdfcopyright={Copyright © 2026 Fredrik Bierich. Licensed under CC BY-NC-SA 4.0.},
+	pdflicenseurl={https://creativecommons.org}
+}
+\graphicspath{{./graphics/}}
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}[hang]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\DeclareMathOperator{\arc}{arc}
+\DeclareMathOperator{\area}{area}
+\newcommand{\circularsector}{
+    \begin{tikzpicture}[baseline=-0.1ex, scale=0.27]
+        \draw (0,0) -- (60:1) arc (60:120:1) -- cycle;
+    \end{tikzpicture}
+}
+\title{The Abstraction Gap Between Mathematics and Physics: The Hidden Compromise in Dimensional Analysis Resolved}
+\author{Fredrik Bierich \orcidlink{https://orcid.org/0009-0008-0263-0950} \\ \href{mailto:fredrik.bierich@gmail.com}{\texttt{fredrik.bierich@gmail.com}}}
+\date{\today \\ Dataset License: \href{http://creativecommons.org}{CC BY-NC-SA 4.0}}
+\begin{document}
+\maketitle
+\begin{abstract}
+Designed as a mathematical corpus for machine learning in automated reasoning and symbolic AI, this dataset bridges the abstraction gap between mathematics and physics by questioning the concept of angles and axiomatically redefining the circular functions as direct functional mappings from the physical parameters of a circular sector -- namely the radius and the arc length -- to its orthogonal projections. Finally, the utility of this framework is demonstrated by modeling simple harmonic motion and uniform circular motion through these geometric functions, providing a high-precision benchmark for evaluating formal logical reasoning and dimensional correctness in computational models.
+\end{abstract}
+\section{Circular Sector}
+\subsection{Arc Length}
+\begin{equation}
+r \in \mathbb{R}^+
+\end{equation}
+\begin{equation}
+x \in [-r,r]
+\end{equation}
+\begin{equation}
+r \mapsto \overline{OA}
+\end{equation}
+\begin{equation}
+x \mapsto \overline{OB_0}
+\end{equation}
+\begin{equation}
+r \mapsto \overline{OC_n}, n \geq 0
+\end{equation}
+\begin{equation}
+a_n \mapsto \overline{OB_n}, n \geq 0
+\end{equation}
+\begin{equation}
+s_n \mapsto \overline{AC_n}, n \geq 0
+\end{equation}
+\begin{equation}
+s \mapsto \arc AC_0
+\end{equation}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n s_n \\
+s_n = \sqrt{r^2 + r^2 - 2ra_n} \\
+a_n = \frac{r \sqrt{r^2 - a_{n-1}^2}}{\sqrt{r^2 + r^2 - 2ra_{n-1}}}, n \geq 1 \\
+a_0 = x, -r \leq x < r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{r^2 + r^2 - 2ra_n} \\
+a_n = \frac{r \sqrt{r^2 - a_{n-1}^2}}{\sqrt{r^2 + r^2 - 2ra_{n-1}}}, n \geq 1 \\
+a_0 = x, -r \leq x < r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = \frac{r \sqrt{r^2 - a_{n-1}^2}}{\sqrt{r^2 + r^2 - 2ra_{n-1}}}, n \geq 1 \\
+a_0 = x, -r \leq x < r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = \frac{r \sqrt{r^2 - a_{n-1}^2}}{\sqrt{2r^2 - 2ra_{n-1}}}, n \geq 1 \\
+a_0 = x, -r \leq x < r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = r \cdot \frac{\sqrt{r^2 - a_{n-1}^2}}{\sqrt{2r^2 - 2ra_{n-1}}}, n \geq 1 \\
+a_0 = x, -r \leq x < r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = r \sqrt{\frac{r^2 - a_{n-1}^2}{2r^2 - 2ra_{n-1}}}, n \geq 1 \\
+a_0 = x, -r \leq x < r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = r \sqrt{\frac{(r + a_{n-1}) (r - a_{n-1})}{2r^2 - 2ra_{n-1}}}, n \geq 1 \\
+a_0 = x, -r \leq x < r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = r \sqrt{\frac{(r + a_{n-1}) (r - a_{n-1})}{2r (r - a_{n-1})}}, n \geq 1 \\
+a_0 = x, -r \leq x < r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = r \sqrt{\frac{r + a_{n-1}}{2r}}, n \geq 1 \\
+a_0 = x, -r \leq x \leq r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = r \sqrt{\frac{2r (r + a_{n-1})}{(2r)^2}}, n \geq 1 \\
+a_0 = x, -r \leq x \leq r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = r \sqrt{\frac{2r^2 + 2ra_{n-1}}{(2r)^2}}, n \geq 1 \\
+a_0 = x, -r \leq x \leq r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = r \sqrt{\frac{\left(\sqrt{2r^2 + 2ra_{n-1}}\right)^2}{(2r)^2}}, n \geq 1 \\
+a_0 = x, -r \leq x \leq r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = r \sqrt{\left(\frac{\sqrt{2r^2 + 2ra_{n-1}}}{2r}\right)^2}, n \geq 1 \\
+a_0 = x, -r \leq x \leq r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = r \left|\frac{\sqrt{2r^2 + 2ra_{n-1}}}{2r}\right|, n \geq 1 \\
+a_0 = x, -r \leq x \leq r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = r \cdot \frac{\left|\sqrt{2r^2 + 2ra_{n-1}}\right|}{\left|2r\right|}, n \geq 1 \\
+a_0 = x, -r \leq x \leq r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = r \cdot \frac{\sqrt{2r^2 + 2ra_{n-1}}}{\left|2r\right|}, n \geq 1 \\
+a_0 = x, -r \leq x \leq r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = r \cdot \frac{\sqrt{2r^2 + 2ra_{n-1}}}{2r}, n \geq 1 \\
+a_0 = x, -r \leq x \leq r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = \frac{r \sqrt{2r^2 + 2ra_{n-1}}}{2r}, n \geq 1 \\
+a_0 = x, -r \leq x \leq r
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = \frac{\sqrt{2r^2 + 2ra_{n-1}}}{2}, n \geq 1 \\
+a_0 = x, -r \leq x \leq r
+\end{gather}
+\end{subequations}
+\subsection{Area}
+\begin{equation}
+r \in \mathbb{R}^+
+\end{equation}
+\begin{equation}
+s \in (0, 4Q_r]
+\end{equation}
+\begin{equation}
+r \mapsto \overline{OA}
+\end{equation}
+\begin{equation}
+s \mapsto \arc AC_0
+\end{equation}
+\begin{equation}
+A \mapsto \area \circularsector OAC_0
+\end{equation}
+\begin{equation}
+A = \frac{rs}{2}
+\end{equation}
+\subsection{Circular Functions}
+\subsubsection{Arccosine}
+\begin{equation}
+\begin{aligned}
+\arccos \colon \{(r,x) \in \mathbb{R}^{+} \times \mathbb{R} \mid -r \leq x \leq r\} & \to \mathbb{R} \\
+(r,x) & \mapsto s \in \left[0, 2Q_r\right]
+\end{aligned}
+\end{equation}
+\begin{subequations}
+\begin{gather}
+\arccos(r,x) = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = \frac{\sqrt{2r^2 + 2ra_{n-1}}}{2}, n \geq 1 \\
+a_0 = x
+\end{gather}
+\end{subequations}
+\subsubsection{Cosine}
+\begin{equation}
+\begin{aligned}
+\cos \colon \mathbb{R}^{+} \times \mathbb{R} & \to \mathbb{R} \\
+(r,s) & \mapsto x \in [-r,r]
+\end{aligned}
+\end{equation}
+\begin{equation}
+Q_r \stackrel{\text{def}}{=} \min \{s > 0 \mid \cos(r,s) = 0\}
+\end{equation}
+\begin{subequations}
+\begin{gather}
+s = \lim \limits_{n \to \infty} 2^n \sqrt{2r^2 - 2ra_n} \\
+a_n = \frac{\sqrt{2r^2 + 2ra_{n-1}}}{2}, n \geq 1 \\
+a_0 = \cos(r,s)
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+m \in \mathbb{N}_{0} \\
+s \approx 2^m \sqrt{2r^2 - 2rb_{m,m}} \\
+b_{m,n} = \frac{\sqrt{2r^2 + 2rb_{m,n-1}}}{2}, 1 \leq n \leq m \\
+b_{m,0} = \cos(r,s)
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+m \in \mathbb{N}_{0} \\
+\cos(r,s) \approx b_{m,m} \\
+b_{m,n-1} = \frac{\sqrt{2r^2 + 2rb_{m,n}}}{2}, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n-1} = \frac{\sqrt{2r^2 + 2rb_{m,n}}}{2}, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+2b_{m,n-1} = 2 \cdot \frac{\sqrt{2r^2 + 2rb_{m,n}}}{2}, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+2b_{m,n-1} = \frac{2 \sqrt{2r^2 + 2rb_{m,n}}}{2}, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+2b_{m,n-1} = \sqrt{2r^2 + 2rb_{m,n}}, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+(2b_{m,n-1})^2 = \left(\sqrt{2r^2 + 2rb_{m,n}}\right)^2, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+2^2b_{m,n-1}^2 = \left(\sqrt{2r^2 + 2rb_{m,n}}\right)^2, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+4b_{m,n-1}^2 = \left(\sqrt{2r^2 + 2rb_{m,n}}\right)^2, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+4b_{m,n-1}^2 = 2r^2 + 2rb_{m,n}, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+4b_{m,n-1}^2 - 2r^2 = 2r^2 + 2rb_{m,n} - 2r^2, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+4b_{m,n-1}^2 - 2r^2 = 2rb_{m,n}, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+\frac{4b_{m,n-1}^2 - 2r^2}{2r} = \frac{2rb_{m,n}}{2r}, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+\frac{4b_{m,n-1}^2}{2r} - \frac{2r^2}{2r} = \frac{2rb_{m,n}}{2r}, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+\frac{2b_{m,n-1}^2}{r} - \frac{2r^2}{2r} = \frac{2rb_{m,n}}{2r}, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+\frac{2b_{m,n-1}^2}{r} - r = \frac{2rb_{m,n}}{2r}, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+\frac{2b_{m,n-1}^2}{r} - r = b_{m,n}, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+2^m \sqrt{2r^2 - 2rb_{m,0}} = s, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+\frac{2^m \sqrt{2r^2 - 2rb_{m,0}}}{2^m} = \frac{s}{2^m}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+\sqrt{2r^2 - 2rb_{m,0}} = \frac{s}{2^m}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+\left(\sqrt{2r^2 - 2rb_{m,0}}\right)^2 = \left(\frac{s}{2^m}\right)^2, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+2r^2 - 2rb_{m,0} = \left(\frac{s}{2^m}\right)^2, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+2r^2 - 2rb_{m,0} = \frac{s^2}{\left(2^m\right)^2}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+2r^2 - 2rb_{m,0} = \frac{s^2}{2^{2m}}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+2r^2 - 2rb_{m,0} - 2r^2 = \frac{s^2}{2^{2m}} - 2r^2, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+-2rb_{m,0} = \frac{s^2}{2^{2m}} - 2r^2, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+\frac{-2rb_{m,0}}{-2r} = \frac{\left(\frac{s^2}{2^{2m}}\right) - 2r^2}{-2r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+b_{m,0} = \frac{\left(\frac{s^2}{2^{2m}}\right) - 2r^2}{-2r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+b_{m,0} = \frac{\left(\frac{s^2}{2^{2m}}\right)}{-2r} - \frac{2r^2}{-2r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+b_{m,0} = \frac{s^2}{2^{2m}(-2r)} - \frac{2r^2}{-2r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+b_{m,0} = \frac{s^2}{-2^{2m+1}r} - \frac{2r^2}{-2r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+b_{m,0} = \frac{s^2}{-2^{2m+1}r} + \frac{-2r^2}{-2r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+b_{m,0} = \frac{s^2}{-2^{2m+1}r} + r, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+b_{m,0} = r + \frac{s^2}{-2^{2m+1}r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+b_{m,0} = r - \left(-\frac{s^2}{-2^{2m+1}r}\right), m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+b_{m,0} = r - \left(\frac{-s^2}{-2^{2m+1}r}\right), m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = \frac{2b_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+b_{m,0} = r - \frac{s^2}{2^{2m+1}r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+r \hat{b}_{m,n} = \frac{2 (r \hat{b}_{m,n-1})^2}{r} - r, 1 \leq n \leq m \\
+r \hat{b}_{m,0} = r - \frac{s^2}{2^{2m+1}r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+r \hat{b}_{m,n} = \frac{2r^2 \hat{b}_{m,n-1}^2}{r} - r, 1 \leq n \leq m \\
+r \hat{b}_{m,0} = r - \frac{s^2}{2^{2m+1}r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+r \hat{b}_{m,n} = 2r \hat{b}_{m,n-1}^2 - r, 1 \leq n \leq m \\
+r \hat{b}_{m,0} = r - \frac{s^2}{2^{2m+1}r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+\frac{r \hat{b}_{m,n}}{r} = \frac{2r \hat{b}_{m,n-1}^2 - r}{r}, 1 \leq n \leq m \\
+r \hat{b}_{m,0} = r - \frac{s^2}{2^{2m+1}r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+\hat{b}_{m,n} = \frac{2r \hat{b}_{m,n-1}^2 - r}{r}, 1 \leq n \leq m \\
+r \hat{b}_{m,0} = r - \frac{s^2}{2^{2m+1}r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+\hat{b}_{m,n} = \frac{2r \hat{b}_{m,n-1}^2}{r} - \frac{r}{r}, 1 \leq n \leq m \\
+r \hat{b}_{m,0} = r - \frac{s^2}{2^{2m+1}r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+\hat{b}_{m,n} = 2 \hat{b}_{m,n-1}^2 - \frac{r}{r}, 1 \leq n \leq m \\
+r \hat{b}_{m,0} = r - \frac{s^2}{2^{2m+1}r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+\hat{b}_{m,n} = 2 \hat{b}_{m,n-1}^2 - 1, 1 \leq n \leq m \\
+r \hat{b}_{m,0} = r - \frac{s^2}{2^{2m+1}r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+\hat{b}_{m,n} = 2 \hat{b}_{m,n-1}^2 - 1, 1 \leq n \leq m \\
+\frac{r \hat{b}_{m,0}}{r} = \frac{r - \left(\frac{s^2}{2^{2m+1}r}\right)}{r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+\hat{b}_{m,n} = 2 \hat{b}_{m,n-1}^2 - 1, 1 \leq n \leq m \\
+\hat{b}_{m,0} = \frac{r - \left(\frac{s^2}{2^{2m+1}r}\right)}{r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+\hat{b}_{m,n} = 2 \hat{b}_{m,n-1}^2 - 1, 1 \leq n \leq m \\
+\hat{b}_{m,0} = \frac{r}{r} - \frac{\left(\frac{s^2}{2^{2m+1}r}\right)}{r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+\hat{b}_{m,n} = 2 \hat{b}_{m,n-1}^2 - 1, 1 \leq n \leq m \\
+\hat{b}_{m,0} = 1 - \frac{\left(\frac{s^2}{2^{2m+1}r}\right)}{r}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+\hat{b}_{m,n} = 2 \hat{b}_{m,n-1}^2 - 1, 1 \leq n \leq m \\
+\hat{b}_{m,0} = 1 - \frac{s^2}{2^{2m+1}r^2}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\hat{b}_{m,n} = 2 \hat{b}_{m,n-1}^2 - 1, 1 \leq n \leq m \\
+\hat{b}_{m,0} = 1 - \frac{s^2}{2^{2m+1}r^2}, m \geq 0
+\end{gather}
+\end{subequations}
+\begin{equation}
+\hat{b}_{m,n} = T_2^{\circ n}\left(1 - \frac{s^2}{2^{2m+1}r^2}\right), 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = T_{2^n}\left(1 - \frac{s^2}{2^{2m+1}r^2}\right), 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{T_{2^n}^{(k)}{(1)}}{k!} \left(\left(1 - \frac{s^2}{2^{2m+1}r^2}\right) - 1\right)^k, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{2^{k} \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!} \left(\left(1 - \frac{s^2}{2^{2m+1}r^2}\right) - 1\right)^k, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{2^{k} \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!} \left(1 - \frac{s^2}{2^{2m+1}r^2} - 1\right)^k, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{2^{k} \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!} \left(-\frac{s^2}{2^{2m+1}r^2}\right)^k, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{2^{k} \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!} \left(\frac{-s^2}{2^{2m+1}r^2}\right)^k, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{2^{k} \left(\frac{-s^2}{2^{2m+1}r^2}\right)^k \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{\left(2 \cdot \frac{-s^2}{2^{2m+1}r^2}\right)^k \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{\left(\frac{-2s^2}{2^{2m+1}r^2}\right)^k \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{\left(\frac{-s^2}{2^{2m}r^2}\right)^k \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{\left(\frac{-\left(\frac{s^2}{r^2}\right)}{2^{2m}}\right)^k \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{\left(\frac{-\left(\frac{s}{r}\right)^2}{2^{2m}}\right)^k \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{\left(\frac{-\left(\frac{s}{r}\right)^2}{(2^2)^m}\right)^k \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{\left(\frac{-\left(\frac{s}{r}\right)^2}{4^m}\right)^k \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{\frac{\left(-\left(\frac{s}{r}\right)^2\right)^k}{(4^m)^k} \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{\frac{(-1)^k \left(\left(\frac{s}{r}\right)^2\right)^k}{(4^m)^k} \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(4^m)^k} \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)!}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k} \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(4^m)^k}\right)}{(2k)!}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k} \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(4^m)^{k} (2k)!}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k} \prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(2k)! (4^m)^k}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \frac{\prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{(4^m)^k}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \frac{\prod \limits_{j=0}^{k-1} ((2^n)^2 - j^2)}{\prod \limits_{j=0}^{k-1} 4^m}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \frac{(2^n)^2 - j^2}{4^m}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \frac{2^{2n} - j^2}{4^m}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \frac{(2^2)^n - j^2}{4^m}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \frac{4^n - j^2}{4^m}, 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \left(\frac{4^n}{4^m} - \frac{j^2}{4^m}\right), 0 \leq n \leq m
+\end{equation}
+\begin{equation}
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \left(4^{n-m} - \frac{j^2}{4^m}\right), 0 \leq n \leq m
+\end{equation}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+\hat{b}_{m,n} = \sum \limits_{k=0}^{2^n} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \left(4^{n-m} - \frac{j^2}{4^m}\right), 0 \leq n \leq m
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} r \hat{b}_{m,m} \\
+r \hat{b}_{m,n} = r \sum \limits_{k=0}^{2^n} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \left(4^{n-m} - \frac{j^2}{4^m}\right), 0 \leq n \leq m
+\end{gather}
+\end{subequations}
+\begin{subequations}
+\begin{gather}
+\cos(r,s) = \lim \limits_{m \to \infty} b_{m,m} \\
+b_{m,n} = r \sum \limits_{k=0}^{2^n} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \left(4^{n-m} - \frac{j^2}{4^m}\right), 0 \leq n \leq m
+\end{gather}
+\end{subequations}
+\begin{equation}
+\cos(r,s) = \lim \limits_{m \to \infty} r \sum \limits_{k=0}^{2^m} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \left(4^{m-m} - \frac{j^2}{4^m}\right)
+\end{equation}
+\begin{equation}
+\cos(r,s) = \lim \limits_{m \to \infty} r \sum \limits_{k=0}^{2^m} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \left(4^{0} - \frac{j^2}{4^m}\right)
+\end{equation}
+\begin{equation}
+\cos(r,s) = \lim \limits_{m \to \infty} r \sum \limits_{k=0}^{2^m} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \left(1 - \frac{j^2}{4^m}\right)
+\end{equation}
+\begin{equation}
+0 \leq j \leq k - 1 < 2^m
+\end{equation}
+\begin{equation}
+0 \leq j < 2^m
+\end{equation}
+\begin{equation}
+0^2 \leq j^2 < (2^m)^2
+\end{equation}
+\begin{equation}
+0 \leq j^2 < (2^m)^2
+\end{equation}
+\begin{equation}
+0 \leq j^2 < 2^{2m}
+\end{equation}
+\begin{equation}
+0 \leq j^2 < (2^2)^m
+\end{equation}
+\begin{equation}
+0 \leq j^2 < 4^m
+\end{equation}
+\begin{equation}
+\frac{0}{4^m} \leq \frac{j^2}{4^m} < \frac{4^m}{4^m}
+\end{equation}
+\begin{equation}
+0 \leq \frac{j^2}{4^m} < \frac{4^m}{4^m}
+\end{equation}
+\begin{equation}
+0 \leq \frac{j^2}{4^m} < 1
+\end{equation}
+\begin{equation}
+-0 \geq -\frac{j^2}{4^m} > -1
+\end{equation}
+\begin{equation}
+0 \geq -\frac{j^2}{4^m} > -1
+\end{equation}
+\begin{equation}
+0 + 1 \geq -\frac{j^2}{4^m} + 1 > -1 + 1
+\end{equation}
+\begin{equation}
+1 \geq -\frac{j^2}{4^m} + 1 > -1 + 1
+\end{equation}
+\begin{equation}
+1 \geq 1 - \frac{j^2}{4^m} > -1 + 1
+\end{equation}
+\begin{equation}
+1 \geq 1 - \frac{j^2}{4^m} > 0
+\end{equation}
+\begin{equation}
+0 < 1 - \frac{j^2}{4^m} \leq 1
+\end{equation}
+\begin{equation}
+0 < \prod \limits_{j=0}^{k-1} \left(1 - \frac{j^2}{4^m}\right) \leq 1
+\end{equation}
+\begin{equation}
+\left|\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right| = \frac{\left|(-1)^k \left(\frac{s}{r}\right)^{2k}\right|}{\left|(2k)!\right|}
+\end{equation}
+\begin{equation}
+\left|\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right| = \frac{\left|(-1)^k\right| \left|\left(\frac{s}{r}\right)^{2k}\right|}{\left|(2k)!\right|}
+\end{equation}
+\begin{equation}
+\left|\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right| = \frac{\left|\left(\frac{s}{r}\right)^{2k}\right|}{\left|(2k)!\right|}
+\end{equation}
+\begin{equation}
+\left|\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right| = \frac{\left(\frac{s}{r}\right)^{2k}}{\left|(2k)!\right|}
+\end{equation}
+\begin{equation}
+\left|\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right| = \frac{\left(\frac{s}{r}\right)^{2k}}{(2k)!}
+\end{equation}
+\begin{equation}
+\left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = \left|\frac{\left(\frac{-\left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{\left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right|
+\end{equation}
+\begin{equation}
+\left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = \left|\frac{\left(\frac{-\left(\frac{s}{r}\right)^{2k+2}}{(2(k+1))!}\right)}{\left(\frac{\left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right|
+\end{equation}
+\begin{equation}
+\left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = \left|\frac{\left(\frac{-\left(\frac{s}{r}\right)^{2k+2}}{(2k+2)!}\right)}{\left(\frac{\left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right|
+\end{equation}
+\begin{equation}
+\left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = \left|\frac{\left(\frac{-\left(\frac{s}{r}\right)^{2k+2}}{(2k+2)(2k+1)(2k)!}\right)}{\left(\frac{\left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right|
+\end{equation}
+\begin{equation}
+\left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = \left|\frac{\left(\frac{-(2k)!\left(\frac{s}{r}\right)^{2k+2}}{(2k+2)(2k+1)(2k)!}\right)}{\left(\frac{s}{r}\right)^{2k}}\right|
+\end{equation}
+\begin{equation}
+\left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = \left|\frac{\left(\frac{-\left(\frac{s}{r}\right)^{2k+2}}{(2k+2)(2k+1)}\right)}{\left(\frac{s}{r}\right)^{2k}}\right|
+\end{equation}
+\begin{equation}
+\left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = \left|\frac{-\left(\frac{s}{r}\right)^2}{(2k+2)(2k+1)}\right|
+\end{equation}
+\begin{equation}
+\left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = \frac{\left|-\left(\frac{s}{r}\right)^2\right|}{\left|(2k+2)(2k+1)\right|}
+\end{equation}
+\begin{equation}
+\left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = \frac{\left|-1\right| \left|\left(\frac{s}{r}\right)^2\right|}{\left|(2k+2)(2k+1)\right|}
+\end{equation}
+\begin{equation}
+\left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = \frac{\left|\left(\frac{s}{r}\right)^2\right|}{\left|(2k+2)(2k+1)\right|}
+\end{equation}
+\begin{equation}
+\left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = \frac{\left(\frac{s}{r}\right)^2}{\left|(2k+2)(2k+1)\right|}
+\end{equation}
+\begin{equation}
+\left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = \frac{\left(\frac{s}{r}\right)^2}{(2k+2)(2k+1)}
+\end{equation}
+\begin{equation}
+\lim \limits_{k \to \infty} \left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = \lim \limits_{k \to \infty} \frac{\left(\frac{s}{r}\right)^2}{(2k+2)(2k+1)}
+\end{equation}
+\begin{equation}
+\lim \limits_{k \to \infty} \left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| = 0
+\end{equation}
+\begin{equation}
+\lim \limits_{k \to \infty} \left|\frac{\left(\frac{(-1)^{k+1} \left(\frac{s}{r}\right)^{2(k+1)}}{(2(k+1))!}\right)}{\left(\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}\right| < 1
+\end{equation}
+\begin{equation}
+\sum \limits_{k=0}^{\infty} \frac{\left(\frac{s}{r}\right)^{2k}}{(2k)!} < \infty
+\end{equation}
+\begin{equation}
+\left|\frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \left(1 - \frac{j^2}{4^m}\right)\right| \leq \frac{\left(\frac{s}{r}\right)^{2k}}{(2k)!}
+\end{equation}
+\begin{equation}
+\cos(r,s) = r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \lim \limits_{m \to \infty} \prod \limits_{j=0}^{k-1} \left(1 - \frac{j^2}{4^m}\right)
+\end{equation}
+\begin{equation}
+\cos(r,s) = r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} \left(1 - 0\right)
+\end{equation}
+\begin{equation}
+\cos(r,s) = r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \prod \limits_{j=0}^{k-1} 1
+\end{equation}
+\begin{equation}
+\cos(r,s) = r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \cdot 1^k
+\end{equation}
+\begin{equation}
+\cos(r,s) = r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!} \cdot 1
+\end{equation}
+\begin{equation}
+\cos(r,s) = r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}
+\end{equation}
+\paragraph{Periodicity}
+\begin{equation}
+\cos(r,s + Q_r) = \frac{\cos(r,s) \cos(r,Q_r) - \sin(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + Q_r) = \frac{\cos(r,s) \cdot 0 - \sin(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + Q_r) = \frac{0 - \sin(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + Q_r) = \frac{-\sin(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + Q_r) = \frac{-\sin(r,s) \cdot r}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + Q_r) = -\sin(r,s)
+\end{equation}
+\begin{equation}
+\cos(r,s + Q_r + Q_r) = -\sin(r,s + Q_r)
+\end{equation}
+\begin{equation}
+\cos(r,s + 2Q_r) = -\sin(r,s + Q_r)
+\end{equation}
+\begin{equation}
+\cos(r,s + 2Q_r) = -\frac{\sin(r,s) \cos(r,Q_r) + \cos(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + 2Q_r) = -\frac{\sin(r,s) \cdot 0 + \cos(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + 2Q_r) = -\frac{0 + \cos(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + 2Q_r) = -\frac{\cos(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + 2Q_r) = -\frac{\cos(r,s) \cdot r}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + 2Q_r) = \frac{-\cos(r,s) \cdot r}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + 2Q_r) = -\cos(r,s)
+\end{equation}
+\begin{equation}
+\cos(r,s + 2Q_r + Q_r) = -\cos(r,s + Q_r)
+\end{equation}
+\begin{equation}
+\cos(r,s + 3Q_r) = -\cos(r,s + Q_r)
+\end{equation}
+\begin{equation}
+\cos(r,s + 3Q_r) = -(-\sin(r,s))
+\end{equation}
+\begin{equation}
+\cos(r,s + 3Q_r) = \sin(r,s)
+\end{equation}
+\begin{equation}
+\cos(r,s + 3Q_r + Q_r) = \sin(r,s + Q_r)
+\end{equation}
+\begin{equation}
+\cos(r,s + 4Q_r) = \sin(r,s + Q_r)
+\end{equation}
+\begin{equation}
+\cos(r,s + 4Q_r) = \frac{\sin(r,s) \cos(r,Q_r) + \cos(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + 4Q_r) = \frac{\sin(r,s) \cdot 0 + \cos(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + 4Q_r) = \frac{0 + \cos(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + 4Q_r) = \frac{\cos(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + 4Q_r) = \frac{\cos(r,s) \cdot r}{r}
+\end{equation}
+\begin{equation}
+\cos(r,s + 4Q_r) = \cos(r,s)
+\end{equation}
+\paragraph{Partial Derivative}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}\right)}{\partial s}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \frac{s^{2k}}{r^{2k}}}{(2k)!}\right)}{\partial s}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k s^{2k}}{r^{2k} (2k)!}\right)}{\partial s}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(\sum \limits_{k=0}^{\infty} \frac{(-1)^k rs^{2k}}{r^{2k} (2k)!}\right)}{\partial s}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \frac{\partial \left(\sum \limits_{k=0}^{\infty} \frac{(-1)^k s^{2k}}{r^{2k-1} (2k)!}\right)}{\partial s}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=0}^{\infty} \frac{(-1)^k \frac{\partial s^{2k}}{\partial s}}{r^{2k-1} (2k)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=1}^{\infty} \frac{(-1)^k (2k) s^{2k-1}}{r^{2k-1} (2k)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=1}^{\infty} \frac{(-1)^k (2k) \frac{s^{2k-1}}{r^{2k-1}}}{(2k)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=1}^{\infty} \frac{(-1)^k (2k) \left(\frac{s}{r}\right)^{2k-1}}{(2k)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=1}^{\infty} \frac{(-1)^k (2k) \left(\frac{s}{r}\right)^{2k-1}}{(2k) (2k-1)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=1}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k-1}}{(2k-1)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \sum \limits_{k=1}^{\infty} \frac{-(-1)^{k-1} \left(\frac{s}{r}\right)^{2k-1}}{(2k-1)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = -\sum \limits_{k=1}^{\infty} \frac{(-1)^{k-1} \left(\frac{s}{r}\right)^{2k-1}}{(2k-1)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = -\sum \limits_{k=1}^{\infty} \frac{(-1)^{k-1} \left(\frac{s}{r}\right)^{2(k-1)+1}}{(2k-1)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = -\sum \limits_{k=1}^{\infty} \frac{(-1)^{k-1} \left(\frac{s}{r}\right)^{2(k-1)+1}}{(2(k-1)+1)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = -\sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k+1}}{(2k+1)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \frac{-r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k+1}}{(2k+1)!}}{r}
+\end{equation}
+\begin{equation}
+\frac{\partial \cos(r,s)}{\partial s} = \frac{-\sin(r,s)}{r}
+\end{equation}
+\subsubsection{Arcsine}
+\begin{equation}
+\begin{aligned}
+\arcsin \colon \{(r,y) \in \mathbb{R}^{+} \times \mathbb{R} \mid -r \leq y \leq r\} & \to \mathbb{R} \\
+(r,y) & \mapsto s \in \left[-Q_r, Q_r\right]
+\end{aligned}
+\end{equation}
+\begin{equation}
+\arcsin(r,y) = \frac{\arcsin(r,y) + \arcsin(r,y)}{2}
+\end{equation}
+\begin{equation}
+\arcsin(r,y) = \frac{\arcsin(r,y) + \arcsin(r,y) + \arccos(r,y) - \arccos(r,y)}{2}
+\end{equation}
+\begin{equation}
+\arcsin(r,y) = \frac{\arcsin(r,y) + \arcsin(r,-y) + \arccos(r,-y) - \arccos(r,y)}{2}
+\end{equation}
+\begin{equation}
+\arcsin(r,y) = \frac{\arcsin(r,y) - \arcsin(r,y) + \arccos(r,-y) - \arccos(r,y)}{2}
+\end{equation}
+\begin{equation}
+\arcsin(r,y) = \frac{\arccos(r,-y) - \arccos(r,y)}{2}
+\end{equation}
+\begin{landscape}
+\subsubsection{Sine}
+\begin{equation}
+\begin{aligned}
+\sin \colon \mathbb{R}^{+} \times \mathbb{R} & \to \mathbb{R} \\
+(r,s) & \mapsto y \in [-r,r]
+\end{aligned}
+\end{equation}
+{
+\allowdisplaybreaks
+\begin{gather}
+(\alpha,\beta) \in \mathbb{R}^{2} \\
+\sin^2(r,\alpha - \beta) + \left(r - \cos(r,\alpha - \beta)\right)^2 = \left(\cos(r,\alpha) - \cos(r,\beta)\right)^2 + \left(\sin(r,\alpha) - \sin(r,\beta)\right)^2 \\
+\cos^2(r,\alpha - \beta) + \sin^2(r,\alpha - \beta) + \left(r - \cos(r,\alpha - \beta)\right)^2 - \cos^2(r,\alpha - \beta) = \left(\cos(r,\alpha) - \cos(r,\beta)\right)^2 + \left(\sin(r,\alpha) - \sin(r,\beta)\right)^2 \\
+r^2 + \left(r - \cos(r,\alpha - \beta)\right)^2 - \cos^2(r,\alpha - \beta) = \left(\cos(r,\alpha) - \cos(r,\beta)\right)^2 + \left(\sin(r,\alpha) - \sin(r,\beta)\right)^2 \\
+r^2 + r^2 - 2r \cos(r,\alpha - \beta) + \cos^2(r,\alpha - \beta) - \cos^2(r,\alpha - \beta) = \left(\cos(r,\alpha) - \cos(r,\beta)\right)^2 + \left(\sin(r,\alpha) - \sin(r,\beta)\right)^2 \\
+2r^2 - 2r \cos(r,\alpha - \beta) + \cos^2(r,\alpha - \beta) - \cos^2(r,\alpha - \beta) = \left(\cos(r,\alpha) - \cos(r,\beta)\right)^2 + \left(\sin(r,\alpha) - \sin(r,\beta)\right)^2 \\
+2r^2 - 2r \cos(r,\alpha - \beta) = \left(\cos(r,\alpha) - \cos(r,\beta)\right)^2 + \left(\sin(r,\alpha) - \sin(r,\beta)\right)^2 \\
+2r^2 - 2r \cos(r,\alpha - \beta) - 2r^2 = \left(\cos(r,\alpha) - \cos(r,\beta)\right)^2 + \left(\sin(r,\alpha) - \sin(r,\beta)\right)^2 - 2r^2 \\
+-2r \cos(r,\alpha - \beta) = \left(\cos(r,\alpha) - \cos(r,\beta)\right)^2 + \left(\sin(r,\alpha) - \sin(r,\beta)\right)^2 - 2r^2 \\
+\frac{-2r \cos(r,\alpha - \beta)}{-2r} = \frac{\left(\cos(r,\alpha) - \cos(r,\beta)\right)^2 + \left(\sin(r,\alpha) - \sin(r,\beta)\right)^2 - 2r^2}{-2r} \\
+\cos(r,\alpha - \beta) = \frac{\left(\cos(r,\alpha) - \cos(r,\beta)\right)^2 + \left(\sin(r,\alpha) - \sin(r,\beta)\right)^2 - 2r^2}{-2r} \\
+\cos(r,\alpha - \beta) = \frac{\cos^2(r,\alpha) - 2 \cos(r,\alpha) \cos(r,\beta) + \cos^2(r,\beta) + \left(\sin(r,\alpha) - \sin(r,\beta)\right)^2 - 2r^2}{-2r} \\
+\cos(r,\alpha - \beta) = \frac{\cos^2(r,\alpha) - 2 \cos(r,\alpha) \cos(r,\beta) + \cos^2(r,\beta) + \sin^2(r,\alpha) - 2 \sin(r,\alpha) \sin(r,\beta) + \sin^2(r,\beta) - 2r^2}{-2r} \\
+\cos(r,\alpha - \beta) = \frac{\left(\cos^2(r,\alpha) + \sin^2(r,\alpha)\right) - 2 \cos(r,\alpha) \cos(r,\beta) + \cos^2(r,\beta) - 2 \sin(r,\alpha) \sin(r,\beta) + \sin^2(r,\beta) - 2r^2}{-2r} \\
+\cos(r,\alpha - \beta) = \frac{\left(\cos^2(r,\alpha) + \sin^2(r,\alpha)\right) - 2 \cos(r,\alpha) \cos(r,\beta) + \left(\cos^2(r,\beta) + \sin^2(r,\beta)\right) - 2 \sin(r,\alpha) \sin(r,\beta) - 2r^2}{-2r} \\
+\cos(r,\alpha - \beta) = \frac{r^2 - 2 \cos(r,\alpha) \cos(r,\beta) + \left(\cos^2(r,\beta) + \sin^2(r,\beta)\right) - 2 \sin(r,\alpha) \sin(r,\beta) - 2r^2}{-2r} \\
+\cos(r,\alpha - \beta) = \frac{r^2 - 2 \cos(r,\alpha) \cos(r,\beta) + r^2 - 2 \sin(r,\alpha) \sin(r,\beta) - 2r^2}{-2r} \\
+\cos(r,\alpha - \beta) = \frac{2r^2 - 2 \cos(r,\alpha) \cos(r,\beta) - 2 \sin(r,\alpha) \sin(r,\beta) - 2r^2}{-2r} \\
+\cos(r,\alpha - \beta) = \frac{-2 \cos(r,\alpha) \cos(r,\beta) - 2 \sin(r,\alpha) \sin(r,\beta)}{-2r} \\
+\cos(r,\alpha - \beta) = \frac{-2 \left(\cos(r,\alpha) \cos(r,\beta) + \sin(r,\alpha) \sin(r,\beta)\right)}{-2r} \\
+\cos(r,\alpha - \beta) = \frac{\cos(r,\alpha) \cos(r,\beta) + \sin(r,\alpha) \sin(r,\beta)}{r} \\
+\cos(r,\alpha - \beta) = r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha - \beta}{r}\right)^{2k}}{(2k)!} \\
+\cos(r,\alpha - \beta) = r \lim \limits_{n \to \infty} \sum \limits_{k=0}^{n} \frac{(-1)^k \left(\frac{\alpha - \beta}{r}\right)^{2k}}{(2k)!} \\
+\cos(r,\alpha - \beta) = r \lim \limits_{n \to \infty} \sum \limits_{k=0}^{n} \frac{(-1)^k \left(\frac{\alpha}{r} - \frac{\beta}{r}\right)^{2k}}{(2k)!} \\
+\cos(r,\alpha - \beta) = r \lim \limits_{n \to \infty} \sum \limits_{k=0}^{n} \frac{(-1)^k \left(\frac{\alpha}{r} + \frac{-\beta}{r}\right)^{2k}}{(2k)!} \\
+\cos(r,\alpha - \beta) = r \lim \limits_{n \to \infty} \sum \limits_{k=0}^{n} \frac{(-1)^k \sum \limits_{j=0}^{2k} \binom{2k}{j} \left(\frac{\alpha}{r}\right)^{2k-j} \left(\frac{-\beta}{r}\right)^{j}}{(2k)!} \\
+\cos(r,\alpha - \beta) = r \lim \limits_{n \to \infty} \sum \limits_{k=0}^{n} \frac{(-1)^k \sum \limits_{j=0}^{2k} \frac{(2k)!}{j! (2k-j)!} \left(\frac{\alpha}{r}\right)^{2k-j} \left(\frac{-\beta}{r}\right)^{j}}{(2k)!} \\
+\cos(r,\alpha - \beta) = r \lim \limits_{n \to \infty} \sum \limits_{k=0}^{n} \frac{(-1)^k \sum \limits_{j=0}^{2k} (2k)! \frac{\left(\frac{\alpha}{r}\right)^{2k-j} \left(\frac{-\beta}{r}\right)^{j}}{j! (2k-j)!}}{(2k)!} \\
+\cos(r,\alpha - \beta) = r \lim \limits_{n \to \infty} \sum \limits_{k=0}^{n} \frac{(-1)^k (2k)! \sum \limits_{j=0}^{2k} \frac{\left(\frac{\alpha}{r}\right)^{2k-j} \left(\frac{-\beta}{r}\right)^{j}}{j! (2k-j)!}}{(2k)!} \\
+\cos(r,\alpha - \beta) = r \lim \limits_{n \to \infty} \sum \limits_{k=0}^{n} (-1)^k \sum \limits_{j=0}^{2k} \frac{\left(\frac{\alpha}{r}\right)^{2k-j} \left(\frac{-\beta}{r}\right)^{j}}{j! (2k-j)!} \\
+\cos(r,\alpha - \beta) = r \lim \limits_{n \to \infty} \sum \limits_{k=0}^{n} (-1)^k \sum \limits_{j=0}^{2k} \frac{\left(\frac{\alpha}{r}\right)^{2k-j} \left(\frac{-\beta}{r}\right)^{j}}{(2k-j)! j!} \\
+\cos(r,\alpha - \beta) = r \lim \limits_{n \to \infty} \sum \limits_{k=0}^{n} (-1)^k \sum \limits_{j=0}^{2k} \frac{\left(\frac{\alpha}{r}\right)^{2k-j}}{(2k-j)!} \frac{\left(\frac{-\beta}{r}\right)^{j}}{j!} \\
+\cos(r,\alpha - \beta) = r \lim \limits_{n \to \infty} \left(\sum \limits_{k=0}^{n} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k}}{(2k)!} \sum \limits_{j=0}^{n-k} \frac{(-1)^j \left(\frac{\beta}{r}\right)^{2j}}{(2j)!} + \sum \limits_{k=0}^{n-1} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k+1}}{(2k+1)!} \sum \limits_{j=0}^{n-1-k} \frac{(-1)^j \left(\frac{\beta}{r}\right)^{2j+1}}{(2j+1)!}\right) \\
+\cos(r,\alpha - \beta) = r \left(\lim \limits_{n \to \infty} \left(\sum \limits_{k=0}^{n} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k}}{(2k)!} \sum \limits_{j=0}^{n-k} \frac{(-1)^j \left(\frac{\beta}{r}\right)^{2j}}{(2j)!}\right) + \lim \limits_{n \to \infty} \left(\sum \limits_{k=0}^{n-1} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k+1}}{(2k+1)!} \sum \limits_{j=0}^{n-1-k} \frac{(-1)^j \left(\frac{\beta}{r}\right)^{2j+1}}{(2j+1)!}\right)\right) \\
+\cos(r,\alpha - \beta) = r \left(\sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k}}{(2k)!} \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k}}{(2k)!} + \lim \limits_{n \to \infty} \left(\sum \limits_{k=0}^{n-1} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k+1}}{(2k+1)!} \sum \limits_{j=0}^{n-1-k} \frac{(-1)^j \left(\frac{\beta}{r}\right)^{2j+1}}{(2j+1)!}\right)\right) \\
+\cos(r,\alpha - \beta) = r \left(\sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k}}{(2k)!} \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k}}{(2k)!} + \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k+1}}{(2k+1)!} \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k+1}}{(2k+1)!}\right) \\
+\cos(r,\alpha - \beta) = r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k}}{(2k)!} \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k}}{(2k)!} + r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k+1}}{(2k+1)!} \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k+1}}{(2k+1)!} \\
+\cos(r,\alpha - \beta) = \frac{r \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k}}{(2k)!} \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k}}{(2k)!} + r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k+1}}{(2k+1)!} \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k+1}}{(2k+1)!}\right)}{r} \\
+\cos(r,\alpha - \beta) = \frac{r^2 \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k}}{(2k)!} \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k}}{(2k)!} + r^2 \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k+1}}{(2k+1)!} \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k+1}}{(2k+1)!}}{r} \\
+\cos(r,\alpha - \beta) = \frac{\left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k}}{(2k)!}\right) \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k}}{(2k)!}\right) + r^2 \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k+1}}{(2k+1)!} \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k+1}}{(2k+1)!}}{r} \\
+\cos(r,\alpha - \beta) = \frac{\left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k}}{(2k)!}\right) \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k}}{(2k)!}\right) + \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k+1}}{(2k+1)!}\right) \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k+1}}{(2k+1)!}\right)}{r} \\
+\cos(r,\alpha - \beta) = \frac{\cos(r,\alpha) \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k}}{(2k)!}\right) + \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k+1}}{(2k+1)!}\right) \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k+1}}{(2k+1)!}\right)}{r} \\
+\cos(r,\alpha - \beta) = \frac{\cos(r,\alpha) \cos(r,\beta) + \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k+1}}{(2k+1)!}\right) \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k+1}}{(2k+1)!}\right)}{r} \\
+\frac{\cos(r,\alpha) \cos(r,\beta) + \sin(r,\alpha) \sin(r,\beta)}{r} = \frac{\cos(r,\alpha) \cos(r,\beta) + \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k+1}}{(2k+1)!}\right) \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k+1}}{(2k+1)!}\right)}{r} \\
+\sin(r,\alpha) \sin(r,\beta) = \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\alpha}{r}\right)^{2k+1}}{(2k+1)!}\right) \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{\beta}{r}\right)^{2k+1}}{(2k+1)!}\right) \\
+\sin(r,s) \stackrel{\scriptscriptstyle \{\alpha, \beta\} \mapsto s}{=} r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k+1}}{(2k+1)!}
+\end{gather}
+}
+\end{landscape}
+\paragraph{Periodicity}
+\begin{equation}
+\sin(r,s + Q_r) = \frac{\sin(r,s) \cos(r,Q_r) + \cos(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + Q_r) = \frac{\sin(r,s) \cdot 0 + \cos(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + Q_r) = \frac{0 + \cos(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + Q_r) = \frac{\cos(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + Q_r) = \frac{\cos(r,s) \cdot r}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + Q_r) = \cos(r,s)
+\end{equation}
+\begin{equation}
+\sin(r,s + Q_r + Q_r) = \cos(r,s + Q_r)
+\end{equation}
+\begin{equation}
+\sin(r,s + 2Q_r) = \cos(r,s + Q_r)
+\end{equation}
+\begin{equation}
+\sin(r,s + 2Q_r) = \frac{\cos(r,s) \cos(r,Q_r) - \sin(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + 2Q_r) = \frac{\cos(r,s) \cdot 0 - \sin(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + 2Q_r) = \frac{0 - \sin(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + 2Q_r) = \frac{-\sin(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + 2Q_r) = \frac{-\sin(r,s) \cdot r}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + 2Q_r) = -\sin(r,s)
+\end{equation}
+\begin{equation}
+\sin(r,s + 2Q_r + Q_r) = -\sin(r,s + Q_r)
+\end{equation}
+\begin{equation}
+\sin(r,s + 3Q_r) = -\sin(r,s + Q_r)
+\end{equation}
+\begin{equation}
+\sin(r,s + 3Q_r) = -\cos(r,s)
+\end{equation}
+\begin{equation}
+\sin(r,s + 3Q_r + Q_r) = -\cos(r,s + Q_r)
+\end{equation}
+\begin{equation}
+\sin(r,s + 4Q_r) = -\cos(r,s + Q_r)
+\end{equation}
+\begin{equation}
+\sin(r,s + 4Q_r) = -\frac{\cos(r,s) \cos(r,Q_r) - \sin(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + 4Q_r) = -\frac{\cos(r,s) \cdot 0 - \sin(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + 4Q_r) = -\frac{0 - \sin(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + 4Q_r) = -\frac{-\sin(r,s) \sin(r,Q_r)}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + 4Q_r) = -\frac{-\sin(r,s) \cdot r}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + 4Q_r) = \frac{-(-\sin(r,s) \cdot r)}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + 4Q_r) = \frac{-(-\sin(r,s)) \cdot r}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + 4Q_r) = \frac{\sin(r,s) \cdot r}{r}
+\end{equation}
+\begin{equation}
+\sin(r,s + 4Q_r) = \sin(r,s)
+\end{equation}
+\paragraph{Partial Derivative}
+\begin{equation}
+\frac{\partial \sin(r,s)}{\partial s} = \frac{\partial \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k+1}}{(2k+1)!}\right)}{\partial s}
+\end{equation}
+\begin{equation}
+\frac{\partial \sin(r,s)}{\partial s} = \frac{\partial \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \frac{s^{2k+1}}{r^{2k+1}}}{(2k+1)!}\right)}{\partial s}
+\end{equation}
+\begin{equation}
+\frac{\partial \sin(r,s)}{\partial s} = \frac{\partial \left(r \sum \limits_{k=0}^{\infty} \frac{(-1)^k s^{2k+1}}{r^{2k+1} (2k+1)!}\right)}{\partial s}
+\end{equation}
+\begin{equation}
+\frac{\partial \sin(r,s)}{\partial s} = \frac{\partial \left(\sum \limits_{k=0}^{\infty} \frac{(-1)^k rs^{2k+1}}{r^{2k+1} (2k+1)!}\right)}{\partial s}
+\end{equation}
+\begin{equation}
+\frac{\partial \sin(r,s)}{\partial s} = \frac{\partial \left(\sum \limits_{k=0}^{\infty} \frac{(-1)^k s^{2k+1}}{r^{2k} (2k+1)!}\right)}{\partial s}
+\end{equation}
+\begin{equation}
+\frac{\partial \sin(r,s)}{\partial s} = \sum \limits_{k=0}^{\infty} \frac{(-1)^k \frac{\partial s^{2k+1}}{\partial s}}{r^{2k} (2k+1)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \sin(r,s)}{\partial s} = \sum \limits_{k=0}^{\infty} \frac{(-1)^k (2k+1) s^{2k}}{r^{2k} (2k+1)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \sin(r,s)}{\partial s} = \sum \limits_{k=0}^{\infty} \frac{(-1)^k (2k+1) \frac{s^{2k}}{r^{2k}}}{(2k+1)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \sin(r,s)}{\partial s} = \sum \limits_{k=0}^{\infty} \frac{(-1)^k (2k+1) \left(\frac{s}{r}\right)^{2k}}{(2k+1)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \sin(r,s)}{\partial s} = \sum \limits_{k=0}^{\infty} \frac{(-1)^k (2k+1) \left(\frac{s}{r}\right)^{2k}}{(2k+1) (2k)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \sin(r,s)}{\partial s} = \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}
+\end{equation}
+\begin{equation}
+\frac{\partial \sin(r,s)}{\partial s} = \frac{r \sum \limits_{k=0}^{\infty} \frac{(-1)^k \left(\frac{s}{r}\right)^{2k}}{(2k)!}}{r}
+\end{equation}
+\begin{equation}
+\frac{\partial \sin(r,s)}{\partial s} = \frac{\cos(r,s)}{r}
+\end{equation}
+\clearpage
+\begin{figure}[p]
+\centering
+\resizebox{\textwidth}{!}{\input{graphics/circular_sector.tex}}
+\caption{Circular sector.}
+\end{figure}
+\clearpage
+\section{Circular Sector Sequence}
+\subsection{Apothem}
+\begin{equation}
+\area \triangle OAC_{n-1} = \frac{\overline{AC_{n-1}} \overline{OB_n}}{2}, n \geq 1
+\end{equation}
+\begin{equation}
+\area \triangle OAC_{n-1} = \frac{\overline{OC_{n-1}} \overline{AB_{n-1}}}{2}, n \geq 1
+\end{equation}
+\begin{equation}
+\frac{\overline{AC_{n-1}} \overline{OB_n}}{2} = \frac{\overline{OC_{n-1}} \overline{AB_{n-1}}}{2}, n \geq 1
+\end{equation}
+\begin{equation}
+\overline{AC_{n-1}} \overline{OB_n} = \overline{OC_{n-1}} \overline{AB_{n-1}}, n \geq 1
+\end{equation}
+\begin{equation}
+\frac{\overline{AC_{n-1}} \overline{OB_n}}{\overline{AC_{n-1}}} = \frac{\overline{OC_{n-1}} \overline{AB_{n-1}}}{\overline{AC_{n-1}}}, n \geq 1
+\end{equation}
+\begin{equation}
+\overline{OB_n} = \frac{\overline{OC_{n-1}} \overline{AB_{n-1}}}{\overline{AC_{n-1}}}, n \geq 1
+\end{equation}
+\begin{equation}
+\overline{OB_n} = \frac{\overline{OC_{n-1}} \sqrt{\overline{OA}^2 - \overline{OB_{n-1}}^2}}{\overline{AC_{n-1}}}, n \geq 1
+\end{equation}
+\begin{equation}
+\overline{OB_n} = \frac{\overline{OC_{n-1}} \sqrt{\overline{OA}^2 - \overline{OB_{n-1}}^2}}{\sqrt{\overline{OA}^2 + \overline{OC_{n-1}}^2 - 2 \overline{OC_{n-1}} \overline{OB_{n-1}}}}, n \geq 1
+\end{equation}
+\subsection{Chord Length}
+\begin{equation}
+\overline{AC_n} = \sqrt{\overline{AB_n}^2 + \overline{B_nC_n}^2}
+\end{equation}
+\begin{equation}
+\overline{AC_n} = \sqrt{\left(\sqrt{\overline{OA}^2 - \overline{OB_n}^2}\right)^2 + \overline{B_nC_n}^2}
+\end{equation}
+\begin{equation}
+\overline{AC_n} = \sqrt{\overline{OA}^2 - \overline{OB_n}^2 + \overline{B_nC_n}^2}
+\end{equation}
+\begin{equation}
+\overline{AC_n} = \sqrt{\overline{OA}^2 - \overline{OB_n}^2 + \left(\overline{OC_n} - \overline{OB_n}\right)^2}
+\end{equation}
+\begin{equation}
+\overline{AC_n} = \sqrt{\overline{OA}^2 - \overline{OB_n}^2 + \overline{OC_n}^2 - 2 \overline{OC_n} \overline{OB_n} + \overline{OB_n}^2}
+\end{equation}
+\begin{equation}
+\overline{AC_n} = \sqrt{\overline{OA}^2 + \overline{OC_n}^2 - 2 \overline{OC_n} \overline{OB_n}}
+\end{equation}
+\subsection{Arc Length}
+\begin{equation}
+\arc AC_0 \stackrel{\text{def}}{=} \lim \limits_{n \to \infty} 2^n \overline{AC_n}
+\end{equation}
+\subsection{Area}
+\begin{equation}
+\area \circularsector OAC_0 = \lim \limits_{n \to \infty} 2^{n-1} \area OAC_nC_{n-1}
+\end{equation}
+\begin{equation}
+\area \circularsector OAC_0 = \lim \limits_{n \to \infty} 2^{n-1} \frac{\overline{AC_{n-1}} \overline{OC_n}}{2}
+\end{equation}
+\begin{equation}
+\area \circularsector OAC_0 = \frac{\lim \limits_{n \to \infty} 2^{n-1} \overline{AC_{n-1}} \overline{OC_n}}{2}
+\end{equation}
+\begin{equation}
+\area \circularsector OAC_0 = \frac{\lim \limits_{n \to \infty} \left(2^{n-1} \overline{AC_{n-1}}\right) \overline{OC_n}}{2}
+\end{equation}
+\begin{equation}
+\area \circularsector OAC_0 = \frac{\lim \limits_{n \to \infty} \overline{OC_n} \left(2^{n-1} \overline{AC_{n-1}}\right)}{2}
+\end{equation}
+\begin{equation}
+\area \circularsector OAC_0 = \frac{\left(\lim \limits_{n \to \infty} \overline{OC_n}\right) \left(\lim \limits_{n \to \infty} 2^{n-1} \overline{AC_{n-1}}\right)}{2}
+\end{equation}
+\begin{equation}
+\area \circularsector OAC_0 = \frac{\overline{OA} \lim \limits_{n \to \infty} 2^{n-1} \overline{AC_{n-1}}}{2}
+\end{equation}
+\begin{equation}
+\area \circularsector OAC_0 = \frac{\overline{OA} \arc AC_0}{2}
+\end{equation}
+\clearpage
+\begin{figure}[p]
+\centering
+\begin{subfigure}{\textwidth}
+\centering
+\resizebox{\textwidth}{!}{\input{graphics/circular_sector_sequence_recursive_step.tex}}
+\caption{Recursive step.}
+\end{subfigure}
+\caption{Circular sector sequence.}
+\end{figure}
+\clearpage
+\begin{figure}[p]
+\centering
+\ContinuedFloat
+\begin{subfigure}{\textwidth}
+\centering
+\resizebox{\textwidth}{!}{\input{graphics/circular_sector_sequence_base_case.tex}}
+\caption{Base case.}
+\end{subfigure}
+\caption{Circular sector sequence.}
+\end{figure}
+\clearpage
+\section{Simple Harmonic Motion}
+\begin{equation}
+[m] = \text{kg}
+\end{equation}
+\begin{equation}
+[\omega] = \text{m/s}
+\end{equation}
+\begin{equation}
+[k] = \text{N/m}
+\end{equation}
+\begin{equation}
+[r] = \text{m}
+\end{equation}
+\begin{equation}
+s = \omega t
+\end{equation}
+\begin{equation}
+\omega = \lim \limits_{\left|\Delta t\right| \to 0} \frac{\left|\Delta s\right|}{\left|\Delta t\right|}
+\end{equation}
+\begin{equation}
+(\Delta s)^2 \approx (\Delta x)^2 + (\Delta y)^2
+\end{equation}
+\begin{equation}
+\frac{(\Delta s)^2}{(\Delta x)^2} \approx \frac{(\Delta x)^2}{(\Delta x)^2} + \frac{(\Delta y)^2}{(\Delta x)^2}
+\end{equation}
+\begin{equation}
+\frac{(\Delta s)^2}{(\Delta x)^2} \approx 1 + \frac{(\Delta y)^2}{(\Delta x)^2}
+\end{equation}
+\begin{equation}
+\frac{(\Delta s)^2}{(\Delta x)^2} \approx 1 + \left(\frac{\Delta y}{\Delta x}\right)^2
+\end{equation}
+\begin{equation}
+\frac{(\Delta s)^2}{(\Delta x)^2} = 1 + 0 \impliedby x \to 0
+\end{equation}
+\begin{equation}
+\frac{(\Delta s)^2}{(\Delta x)^2} = 1 \impliedby x \to 0
+\end{equation}
+\begin{equation}
+(\Delta x)^2 \frac{(\Delta s)^2}{(\Delta x)^2} = (\Delta x)^2 \impliedby x \to 0
+\end{equation}
+\begin{equation}
+\frac{(\Delta x)^2 (\Delta s)^2}{(\Delta x)^2} = (\Delta x)^2 \impliedby x \to 0
+\end{equation}
+\begin{equation}
+(\Delta s)^2 = (\Delta x)^2 \impliedby x \to 0
+\end{equation}
+\begin{equation}
+\left|\Delta s\right| = \left|\Delta x\right| \impliedby x \to 0
+\end{equation}
+\begin{equation}
+\omega = \lim \limits_{\left|\Delta t\right| \to 0} \frac{\left|\Delta x\right|}{\left|\Delta t\right|} \impliedby x \to 0
+\end{equation}
+\begin{equation}
+F = ma
+\end{equation}
+\begin{equation}
+F = -kx
+\end{equation}
+\begin{equation}
+ma = -kx
+\end{equation}
+\begin{equation}
+x = \cos(r,s)
+\end{equation}
+\begin{equation}
+x(t) = \cos(r,\omega t)
+\end{equation}
+\begin{equation}
+v(t) = \frac{dx}{dt}
+\end{equation}
+\begin{equation}
+v(t) = \left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d (\omega t)}{dt}
+\end{equation}
+\begin{equation}
+v(t) = \frac{-\sin(r,\omega t)}{r} \cdot \frac{d (\omega t)}{dt}
+\end{equation}
+\begin{equation}
+v(t) = \frac{-\sin(r,\omega t)}{r} \cdot \omega
+\end{equation}
+\begin{equation}
+v(t) = \frac{-\omega \sin(r,\omega t)}{r}
+\end{equation}
+\begin{equation}
+a(t) = \frac{dv}{dt}
+\end{equation}
+\begin{equation}
+a(t) = \frac{d \left(\left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \frac{d (\omega t)}{dt}\right)}{dt}
+\end{equation}
+\begin{equation}
+a(t) = \left(\left.\frac{\partial^2 \cos(r,s)}{\partial s^2} \cdot \frac{ds}{dt}\right|_{s = \omega t}\right) \cdot \frac{d (\omega t)}{dt} + \left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+a(t) = \left(\frac{-\cos(r,\omega t)}{r^2} \cdot \frac{d (\omega t)}{dt}\right) \cdot \frac{d (\omega t)}{dt} + \left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+a(t) = \frac{-\cos(r,\omega t)}{r^2} \cdot \left(\frac{d (\omega t)}{dt}\right)^2 + \left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+a(t) = \frac{-\cos(r,\omega t)}{r^2} \cdot \omega^2 + \left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+a(t) = \frac{-\omega^2 \cos(r,\omega t)}{r^2} + \left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+a(t) = \frac{-\omega^2 \cos(r,\omega t)}{r^2} + \frac{-\sin(r,\omega t)}{r} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+a(t) = \frac{-\omega^2 \cos(r,\omega t)}{r^2} + \frac{-\sin(r,\omega t)}{r} \cdot 0
+\end{equation}
+\begin{equation}
+a(t) = \frac{-\omega^2 \cos(r,\omega t)}{r^2} + 0
+\end{equation}
+\begin{equation}
+a(t) = \frac{-\omega^2 \cos(r,\omega t)}{r^2}
+\end{equation}
+\begin{equation}
+a(x) = \frac{-\omega^2 x}{r^2}
+\end{equation}
+\begin{equation}
+m \frac{-\omega^2 x}{r^2} = -kx
+\end{equation}
+\begin{equation}
+\frac{m (-\omega^2 x)}{r^2} = -kx
+\end{equation}
+\begin{equation}
+\frac{-m \omega^2 x}{r^2} = -kx
+\end{equation}
+\begin{equation}
+\frac{-m \omega^2 x}{r^2} = \frac{-kr^2x}{r^2}
+\end{equation}
+\begin{equation}
+m \omega^2 = kr^2
+\end{equation}
+\begin{equation}
+K(t) = \frac{mv^2(t)}{2}
+\end{equation}
+\begin{equation}
+K(t) = \frac{m \left(\frac{-\omega \sin(r,\omega t)}{r}\right)^2}{2}
+\end{equation}
+\begin{equation}
+K(t) = \frac{m \frac{(-\omega \sin(r,\omega t))^2}{r^2}}{2}
+\end{equation}
+\begin{equation}
+K(t) = \frac{m \frac{(-\omega)^2 \sin^2(r,\omega t)}{r^2}}{2}
+\end{equation}
+\begin{equation}
+K(t) = \frac{m \frac{\omega^2 \sin^2(r,\omega t)}{r^2}}{2}
+\end{equation}
+\begin{equation}
+K(t) = \frac{\left(\frac{m \omega^2 \sin^2(r,\omega t)}{r^2}\right)}{2}
+\end{equation}
+\begin{equation}
+K(t) = \frac{\left(\frac{kr^2 \sin^2(r,\omega t)}{r^2}\right)}{2}
+\end{equation}
+\begin{equation}
+K(t) = \frac{k \sin^2(r,\omega t)}{2}
+\end{equation}
+\begin{equation}
+U(t) = \frac{kx^2(t)}{2}
+\end{equation}
+\begin{equation}
+U(t) = \frac{k \cos^2(r,\omega t)}{2}
+\end{equation}
+\begin{equation}
+E = K + U
+\end{equation}
+\begin{equation}
+E = \frac{k \sin^2(r,\omega t)}{2} + \frac{k \cos^2(r,\omega t)}{2}
+\end{equation}
+\begin{equation}
+E = \frac{k \sin^2(r,\omega t) + k \cos^2(r,\omega t)}{2}
+\end{equation}
+\begin{equation}
+E = \frac{k (\sin^2(r,\omega t) + \cos^2(r,\omega t))}{2}
+\end{equation}
+\begin{equation}
+E = \frac{kr^2}{2}
+\end{equation}
+\begin{equation}
+E = \frac{m \omega^2}{2}
+\end{equation}
+\clearpage
+\begin{figure}[p]
+\centering
+\resizebox{\textwidth}{!}{\input{graphics/simple_harmonic_motion.tex}}
+\caption{Simple harmonic motion.}
+\end{figure}
+\clearpage
+\section{Uniform Circular Motion}
+\begin{equation}
+[m] = \text{kg}
+\end{equation}
+\begin{equation}
+[\omega] = \text{m/s}
+\end{equation}
+\begin{equation}
+[r] = \text{m}
+\end{equation}
+\begin{equation}
+s = \omega t
+\end{equation}
+\begin{equation}
+\omega = \lim \limits_{\left|\Delta t\right| \to 0} \frac{\left|\Delta s\right|}{\left|\Delta t\right|}
+\end{equation}
+\begin{equation}
+x = \cos(r,s)
+\end{equation}
+\begin{equation}
+x(t) = \cos(r,\omega t)
+\end{equation}
+\begin{equation}
+y = \sin(r,s)
+\end{equation}
+\begin{equation}
+y(t) = \sin(r,\omega t)
+\end{equation}
+\begin{equation}
+\vec{r}(t) = (x,y)
+\end{equation}
+\begin{equation}
+\vec{r}(t) = (\cos(r,\omega t),\sin(r,\omega t))
+\end{equation}
+\begin{equation}
+\vec{v}(t) = \frac{d \vec{r}}{dt}
+\end{equation}
+\begin{equation}
+\vec{v}(t) = \frac{d (x,y)}{dt}
+\end{equation}
+\begin{equation}
+\vec{v}(t) = \left(\frac{dx}{dt},\frac{dy}{dt}\right)
+\end{equation}
+\begin{equation}
+\frac{dx}{dt} = \left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d (\omega t)}{dt}
+\end{equation}
+\begin{equation}
+\frac{dx}{dt} = \frac{-\sin(r,\omega t)}{r} \cdot \frac{d (\omega t)}{dt}
+\end{equation}
+\begin{equation}
+\frac{dx}{dt} = \frac{-\sin(r,\omega t)}{r} \cdot \omega
+\end{equation}
+\begin{equation}
+\frac{dx}{dt} = \frac{-\omega \sin(r,\omega t)}{r}
+\end{equation}
+\begin{equation}
+\frac{dy}{dt} = \left.\frac{\partial \sin(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d (\omega t)}{dt}
+\end{equation}
+\begin{equation}
+\frac{dy}{dt} = \frac{\cos(r,\omega t)}{r} \cdot \frac{d (\omega t)}{dt}
+\end{equation}
+\begin{equation}
+\frac{dy}{dt} = \frac{\cos(r,\omega t)}{r} \cdot \omega
+\end{equation}
+\begin{equation}
+\frac{dy}{dt} = \frac{\omega \cos(r,\omega t)}{r}
+\end{equation}
+\begin{equation}
+\vec{v}(t) = \left(\frac{-\omega \sin(r,\omega t)}{r},\frac{\omega \cos(r,\omega t)}{r}\right)
+\end{equation}
+\begin{equation}
+\vec{v}(t) = \frac{\omega \left(-\sin(r,\omega t),\cos(r,\omega t)\right)}{r}
+\end{equation}
+\begin{equation}
+v = \left|\vec{v}\right|
+\end{equation}
+\begin{equation}
+v = \left|\frac{\omega \left(-\sin(r,\omega t),\cos(r,\omega t)\right)}{r}\right|
+\end{equation}
+\begin{equation}
+v = \frac{\left|\omega \left(-\sin(r,\omega t),\cos(r,\omega t)\right)\right|}{\left|r\right|}
+\end{equation}
+\begin{equation}
+v = \frac{\left|\omega\right| \left|\left(-\sin(r,\omega t),\cos(r,\omega t)\right)\right|}{\left|r\right|}
+\end{equation}
+\begin{equation}
+v = \frac{\omega \left|\left(-\sin(r,\omega t),\cos(r,\omega t)\right)\right|}{\left|r\right|}
+\end{equation}
+\begin{equation}
+v = \frac{\omega \sqrt{(-\sin(r,\omega t))^2 + \cos^2(r,\omega t)}}{\left|r\right|}
+\end{equation}
+\begin{equation}
+v = \frac{\omega \sqrt{\sin^2(r,\omega t) + \cos^2(r,\omega t)}}{\left|r\right|}
+\end{equation}
+\begin{equation}
+v = \frac{\omega \sqrt{r^2}}{\left|r\right|}
+\end{equation}
+\begin{equation}
+v = \frac{\omega \left|r\right|}{\left|r\right|}
+\end{equation}
+\begin{equation}
+v = \omega
+\end{equation}
+\begin{equation}
+E = \frac{mv^2}{2}
+\end{equation}
+\begin{equation}
+E = \frac{m \omega^2}{2}
+\end{equation}
+\begin{equation}
+\vec{a}(t) = \frac{d^2 \vec{r}}{dt^2}
+\end{equation}
+\begin{equation}
+\vec{a}(t) = \frac{d^2 (x,y)}{dt^2}
+\end{equation}
+\begin{equation}
+\vec{a}(t) = \left(\frac{d^2x}{dt^2},\frac{d^2y}{dt^2}\right)
+\end{equation}
+\begin{equation}
+\frac{d^2x}{dt^2} = \frac{d \left(\left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \frac{d (\omega t)}{dt}\right)}{dt}
+\end{equation}
+\begin{equation}
+\frac{d^2x}{dt^2} = \left(\left.\frac{\partial^2 \cos(r,s)}{\partial s^2} \cdot \frac{ds}{dt}\right|_{s = \omega t}\right) \cdot \frac{d (\omega t)}{dt} + \left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+\frac{d^2x}{dt^2} = \left(\frac{-\cos(r,\omega t)}{r^2} \cdot \frac{d (\omega t)}{dt}\right) \cdot \frac{d (\omega t)}{dt} + \left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+\frac{d^2x}{dt^2} = \frac{-\cos(r,\omega t)}{r^2} \cdot \left(\frac{d (\omega t)}{dt}\right)^2 + \left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+\frac{d^2x}{dt^2} = \frac{-\cos(r,\omega t)}{r^2} \cdot \omega^2 + \left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+\frac{d^2x}{dt^2} = \frac{-\omega^2 \cos(r,\omega t)}{r^2} + \left.\frac{\partial \cos(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+\frac{d^2x}{dt^2} = \frac{-\omega^2 \cos(r,\omega t)}{r^2} + \frac{-\sin(r,\omega t)}{r} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+\frac{d^2x}{dt^2} = \frac{-\omega^2 \cos(r,\omega t)}{r^2} + \frac{-\sin(r,\omega t)}{r} \cdot 0
+\end{equation}
+\begin{equation}
+\frac{d^2x}{dt^2} = \frac{-\omega^2 \cos(r,\omega t)}{r^2} + 0
+\end{equation}
+\begin{equation}
+\frac{d^2x}{dt^2} = \frac{-\omega^2 \cos(r,\omega t)}{r^2}
+\end{equation}
+\begin{equation}
+\frac{d^2y}{dt^2} = \frac{d \left(\left.\frac{\partial \sin(r,s)}{\partial s}\right|_{s = \omega t} \frac{d (\omega t)}{dt}\right)}{dt}
+\end{equation}
+\begin{equation}
+\frac{d^2y}{dt^2} = \left(\left.\frac{\partial^2 \sin(r,s)}{\partial s^2} \cdot \frac{ds}{dt}\right|_{s = \omega t}\right) \cdot \frac{d (\omega t)}{dt} + \left.\frac{\partial \sin(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+\frac{d^2y}{dt^2} = \left(\frac{-\sin(r,\omega t)}{r^2} \cdot \frac{d (\omega t)}{dt}\right) \cdot \frac{d (\omega t)}{dt} + \left.\frac{\partial \sin(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+\frac{d^2y}{dt^2} = \frac{-\sin(r,\omega t)}{r^2} \cdot \left(\frac{d (\omega t)}{dt}\right)^2 + \left.\frac{\partial \sin(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+\frac{d^2y}{dt^2} = \frac{-\sin(r,\omega t)}{r^2} \cdot \omega^2 + \left.\frac{\partial \sin(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+\frac{d^2y}{dt^2} = \frac{-\omega^2 \sin(r,\omega t)}{r^2} + \left.\frac{\partial \sin(r,s)}{\partial s}\right|_{s = \omega t} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+\frac{d^2y}{dt^2} = \frac{-\omega^2 \sin(r,\omega t)}{r^2} + \frac{\cos(r,\omega t)}{r} \cdot \frac{d^2 (\omega t)}{dt^2}
+\end{equation}
+\begin{equation}
+\frac{d^2y}{dt^2} = \frac{-\omega^2 \sin(r,\omega t)}{r^2} + \frac{\cos(r,\omega t)}{r} \cdot 0
+\end{equation}
+\begin{equation}
+\frac{d^2y}{dt^2} = \frac{-\omega^2 \sin(r,\omega t)}{r^2} + 0
+\end{equation}
+\begin{equation}
+\frac{d^2y}{dt^2} = \frac{-\omega^2 \sin(r,\omega t)}{r^2}
+\end{equation}
+\begin{equation}
+\vec{a}(t) = \left(\frac{-\omega^2 \cos(r,\omega t)}{r^2},\frac{-\omega^2 \sin(r,\omega t)}{r^2}\right)
+\end{equation}
+\begin{equation}
+\vec{a}(t) = \frac{-\omega^2 \left(\cos(r,\omega t),\sin(r,\omega t)\right)}{r^2}
+\end{equation}
+\begin{equation}
+\vec{a} = \frac{-\omega^2 \vec{r}}{r^2}
+\end{equation}
+\begin{equation}
+a = \left|\vec{a}\right|
+\end{equation}
+\begin{equation}
+a = \left|\frac{-\omega^2 \vec{r}}{r^2}\right|
+\end{equation}
+\begin{equation}
+a = \frac{\left|-\omega^2 \vec{r}\right|}{\left|r^2\right|}
+\end{equation}
+\begin{equation}
+a = \frac{\left|-\omega^2\right| \left|\vec{r}\right|}{\left|r^2\right|}
+\end{equation}
+\begin{equation}
+a = \frac{\omega^2 \left|\vec{r}\right|}{\left|r^2\right|}
+\end{equation}
+\begin{equation}
+a = \frac{\omega^2 r}{\left|r^2\right|}
+\end{equation}
+\begin{equation}
+a = \frac{\omega^2 r}{r^2}
+\end{equation}
+\begin{equation}
+a = \frac{\omega^2}{r}
+\end{equation}
+\begin{equation}
+F = ma
+\end{equation}
+\begin{equation}
+F = m \frac{\omega^2}{r}
+\end{equation}
+\begin{equation}
+F = \frac{m \omega^2}{r}
+\end{equation}
+\clearpage
+\begin{figure}[p]
+\centering
+\resizebox{\textwidth}{!}{\input{graphics/uniform_circular_motion.tex}}
+\caption{Uniform circular motion.}
+\end{figure}
+\clearpage
+\begin{figure}[p]
+\centering
+\resizebox{\textwidth}{!}{\input{graphics/uniform_circular_motion_position_vector_diagram.tex}}
+\caption{Uniform circular motion (vector diagram).}
+\end{figure}
+\end{document}
