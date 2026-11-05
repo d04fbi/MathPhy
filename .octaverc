@@ -1,4 +1,0 @@
-% SPDX-License-Identifier: MIT
-% Copyright (c) 2026 Fredrik Bierich
-set(groot, 'DefaultAxesColorOrder', [0, 0, 0]);
-set(groot, 'DefaultTextFontSize', 12);
