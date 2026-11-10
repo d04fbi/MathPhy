@@ -2,7 +2,7 @@
 # MathPhy
 Mathematical Physics
 ## Abstract
-This prototype mathematical corpus is meant to be viewed as a preprint for a dataset and attempts to bridge the abstraction gap between mathematics and physics by questioning the concept of angles and redefining the circular functions as direct functional mappings from the physical parameters of a circular sector – namely the radius and the arc length – to its orthogonal projections. The utility of this framework is then demonstrated by modeling simple harmonic motion and uniform circular motion through these geometric functions, providing an alternative and exploratory foundation for evaluating formal logical reasoning and dimensional correctness in computational models.
+This mathematical corpus attempts to bridge the abstraction gap between mathematics and physics by questioning the concept of angles and redefining the circular functions as direct functional mappings from the physical parameters of a circular sector – namely the radius and the arc length – to its orthogonal projections. The utility of this framework is then demonstrated by modeling simple harmonic motion and uniform circular motion through these geometric functions, providing an alternative and exploratory foundation for evaluating formal logical reasoning and dimensional correctness in computational models.
 # Prerequisites
 GNU Octave  
 MiKTeX
