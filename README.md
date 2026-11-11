@@ -2,7 +2,7 @@
 # MathPhy
 Mathematical Physics
 ## Abstract
-This exploratory symbolic mathematical corpus attempts to bridge the abstraction gap between mathematics and physics by formulating circular functions as mappings from the radius and arc length of a circular sector to the coordinates of a point on the circle, expressed as orthogonal projections onto the coordinate axes. It illustrates this approach through models of simple harmonic motion and uniform circular motion, and is intended to support the development of datasets for studying formal reasoning and dimensional consistency in computational models.
+Designed as a seed for a mathematical corpus, this research artifact attempts to bridge the abstraction gap between mathematics and physics by redefining the arcus functions and the circular functions from the geometric quantities of a circular sector. The utility of this framework is then demonstrated by modeling simple harmonic motion and uniform circular motion through these geometric functions, providing an exploratory foundation for evaluating formal reasoning and establishing dimensional consistency in computational models.
 # Prerequisites
 GNU Octave  
 MiKTeX
