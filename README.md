@@ -15,4 +15,4 @@ This mathematical corpus is dual-licensed:
 *   GNU Octave source code (`.m` and `.octaverc` files): Licensed under the [MIT License](LICENSES/MIT.txt).
 *   LaTeX source code and documentation (`.tex`, `.eps`, and `.pdf` files): Licensed under [CC BY-NC-SA 4.0](LICENSES/CC-BY-NC-SA-4.0.txt).
 
-For commerical inquiries, please contact: fredrik.bierich@gmail.com
+For commercial inquiries, please contact: fredrik.bierich@gmail.com
