@@ -7,8 +7,8 @@ Designed as a seed for a mathematical corpus, this research artifact attempts to
 GNU Octave  
 MiKTeX
 ## Compilation
-octave main.m  
-pdflatex report.tex
+octave --path src/m src/m/main.m
+pdflatex -aux-directory=bin/"auxiliary files" src/tex/report.tex
 ## Licensing
-*   GNU Octave source code (`.m` and `.octaverc` files): Licensed under the [MIT License](LICENSES/MIT.txt).
-*   LaTeX source code and documentation (`.tex`, `.eps`, and `.pdf` files): Licensed under [CC BY 4.0](LICENSES/CC-BY-4.0.txt).
+*   GNU Octave source code (`.m` and `.octaverc` files): Licensed under the [MIT License](licenses/MIT.txt).
+*   LaTeX source code and documentation (`.tex`, `.eps`, and `.pdf` files): Licensed under [CC BY 4.0](licenses/CC-BY-4.0.txt).
