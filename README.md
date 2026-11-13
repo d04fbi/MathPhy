@@ -4,14 +4,17 @@ Mathematical Physics
 ## Abstract
 Designed as a seed for a mathematical corpus, this research artifact attempts to bridge the abstraction gap between mathematics and physics by redefining the arcus functions and the circular functions from the geometric quantities of a circular sector. The utility of this framework is then demonstrated by modeling simple harmonic motion and uniform circular motion, providing an exploratory foundation for evaluating formal reasoning and improving dimensional consistency in computational models.
 ## Prerequisites
-GNU Octave  
-MiKTeX
+GNU Octave 11.3.0  
+MiKTeX 24.1
 ## Compilation
 @echo off  
-if not exist "output\m" mkdir "output\m"  
+set "output_directory=output"  
+set "figure_directory=%output_directory%\m"  
+if not exist "%figure_directory%" mkdir "%figure_directory%"  
 octave --path src/m src/m/main.m  
-if not exist "output\tex" mkdir "output\tex"  
-pdflatex -aux-directory=output/tex src/tex/report.tex  
+set "aux_directory=%output_directory%\tex"  
+if not exist "%aux_directory%" mkdir "%aux_directory%"  
+pdflatex -aux-directory="%aux_directory%" src/tex/report.tex  
 exit /b
 ## Licensing
 *   GNU Octave source code (`.m` and `.octaverc` files): Licensed under the [MIT License](licenses/MIT.txt).
