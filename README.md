@@ -9,12 +9,12 @@ MiKTeX 24.1
 ## Compilation
 @echo off  
 set "output_directory=output"  
-set "figure_directory=%output_directory%\m"  
-if not exist "%figure_directory%" mkdir "%figure_directory%"  
+set "output_m_directory=%output_directory%\m"  
+if not exist "%output_m_directory%" mkdir "%output_m_directory%"  
 octave --path src/m src/m/main.m  
-set "aux_directory=%output_directory%\tex"  
-if not exist "%aux_directory%" mkdir "%aux_directory%"  
-pdflatex -aux-directory="%aux_directory%" src/tex/report.tex  
+set "output_tex_directory=%output_directory%\tex"  
+if not exist "%output_tex_directory%" mkdir "%output_tex_directory%"  
+pdflatex -aux-directory="%output_tex_directory%" src/tex/report.tex  
 exit /b
 ## Licensing
 *   GNU Octave source code (`.m` and `.octaverc` files): Licensed under the [MIT License](licenses/MIT.txt).
