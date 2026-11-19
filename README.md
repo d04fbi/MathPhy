@@ -9,6 +9,3 @@ MiKTeX 24.1
 ## Compilation
 octave main.m  
 pdflatex report.tex
-## Licensing
-*   GNU Octave source code (`.m` and `.octaverc` files): Licensed under the [MIT License](licenses/MIT.txt).
-*   LaTeX source code and documentation (`.tex`, `.eps`, and `.pdf` files): Licensed under [CC BY 4.0](licenses/CC-BY-4.0.txt).
