@@ -2,7 +2,7 @@
 # MathPhy
 Mathematical Physics
 ## Abstract
-Designed as a seed for a mathematical corpus, this research artifact attempts to bridge the abstraction gap between mathematics and physics by redefining the arcus functions and the circular functions from the geometric quantities of a circular sector. The utility of this framework is then demonstrated by modeling simple harmonic motion and uniform circular motion, providing an exploratory foundation for evaluating formal reasoning and improving dimensional consistency in computational models.
+Designed as a seed for a mathematical corpus tailored for machine learning, this research artifact attempts to bridge the abstraction gap between mathematics and physics by redefining the circular and arcus (inverse circular) functions from the geometric quantities of a circular sector. The utility of this framework is then demonstrated by modeling simple harmonic motion and uniform circular motion, providing an exploratory foundation for evaluating formal reasoning and improving dimensional consistency in computational models.
 ## Prerequisites
 GNU Octave 11.3.0  
 MiKTeX 24.1
