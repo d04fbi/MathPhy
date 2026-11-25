@@ -8,4 +8,4 @@ GNU Octave 11.3.0
 MiKTeX 24.1
 ## Compilation
 octave main.m  
-pdflatex report.tex
+for %%i in (*.tex) do pdflatex "%%i"
